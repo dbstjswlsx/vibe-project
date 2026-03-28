@@ -1,0 +1,12 @@
+---
+description: 프로젝트 스택·문서 우선순위·공통 DO/DON'T (AGENTS.md와 연동)
+alwaysApply: true
+---
+
+# 핵심 원칙
+
+- 기술 스택·상세 DO/DON'T는 루트 `AGENTS.md`와 동일하게 따른다. (Next.js **App Router**, **TypeScript**, **Tailwind CSS**, **Supabase**)
+- 사람용 안내는 `README.md`를 우선하고, 에이전트 작업 맥락은 `AGENTS.md`와 이 규칙들을 따른다.
+- 요청 범위 밖의 리팩터링·무관한 파일 대량 수정·사용자가 요청하지 않은 의존성 추가는 하지 않는다.
+- 기존 코드의 네이밍·폴더 구조·import 스타일에 맞춘다. 모호하면 저장소 안 유사 구현을 먼저 찾는다.
+- **Pages Router**(`pages/`)를 새로 늘리거나 App Router와 동일 기능을 이중으로 만들지 않는다. (이미 `pages/` 레거시만 있으면 사용자 지시를 따른다.)

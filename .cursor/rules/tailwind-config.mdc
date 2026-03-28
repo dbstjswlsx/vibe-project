@@ -1,0 +1,17 @@
+---
+description: tailwind.config 수정 시 content·테마·플러그인 주의사항
+globs: "**/tailwind.config.{js,ts,mjs,cjs}"
+alwaysApply: false
+---
+
+# Tailwind 설정
+
+## 해야 할 것 (DO)
+
+- `content`에 실제 소스 경로(`app/`, `components/` 등)가 빠짐없이 포함되는지 확인한다. 누락 시 프로덕션에서 클래스가 제거될 수 있다.
+- 테마 확장은 기존 `extend` 패턴을 유지하고, 불필요한 전역 덮어쓰기는 피한다.
+- 플러그인 추가는 문서·프로젝트 관례에 맞는 **최소 설정**만 한다.
+
+## 하지 말 것 (DON'T)
+
+- 사용자 요청 없이 설정을 크게 바꿔 **빌드 결과·디자인 토큰 전체**를 흔들지 않는다.
