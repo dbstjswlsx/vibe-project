@@ -13,7 +13,7 @@ export default async function EditEntryPage({
   const supabase = await createClient();
   if (!supabase) {
     return (
-      <div className="py-8">
+      <div className="py-6 sm:py-8">
         <SupabaseConfigMissing />
       </div>
     );

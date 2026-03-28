@@ -44,11 +44,14 @@ export default function NewEntryPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900">새 일기 작성</h1>
+      <h1 className="text-2xl font-semibold tracking-tight text-stone-900">새 일기 작성</h1>
 
-      <form onSubmit={handleSubmit} className="mt-6 space-y-6">
+      <form
+        onSubmit={handleSubmit}
+        className="mt-8 space-y-8 rounded-[1.75rem] border border-stone-200/80 bg-white/90 p-6 shadow-[0_16px_40px_-12px_rgba(28,25,23,0.12)] backdrop-blur-sm sm:p-8"
+      >
         {errors.length > 0 && (
-          <div role="alert" className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600">
+          <div role="alert" className="rounded-xl border border-red-200/80 bg-red-50/90 px-4 py-3 text-sm text-red-700">
             <ul className="list-inside list-disc space-y-1">
               {errors.map((err) => (
                 <li key={err}>{err}</li>
@@ -58,7 +61,7 @@ export default function NewEntryPage() {
         )}
 
         <div>
-          <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="title" className="block text-sm font-medium text-stone-700">
             제목
           </label>
           <input
@@ -67,12 +70,12 @@ export default function NewEntryPage() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="오늘의 제목을 입력하세요"
-            className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 focus:outline-none"
+            className="mt-1.5 block w-full rounded-xl border border-stone-200 bg-stone-50/50 px-4 py-2.5 text-sm text-stone-900 shadow-inner shadow-stone-900/5 placeholder:text-stone-400 focus:border-teal-600 focus:bg-white focus:ring-2 focus:ring-teal-600/20 focus:outline-none"
           />
         </div>
 
         <div>
-          <label htmlFor="content" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="content" className="block text-sm font-medium text-stone-700">
             본문
           </label>
           <textarea
@@ -81,26 +84,26 @@ export default function NewEntryPage() {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="오늘 하루를 기록해 보세요"
-            className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 focus:outline-none resize-y"
+            className="mt-1.5 block w-full resize-y rounded-xl border border-stone-200 bg-stone-50/50 px-4 py-3 text-sm leading-relaxed text-stone-900 shadow-inner shadow-stone-900/5 placeholder:text-stone-400 focus:border-teal-600 focus:bg-white focus:ring-2 focus:ring-teal-600/20 focus:outline-none"
           />
         </div>
 
         <div>
-          <p className="mb-2 text-sm font-medium text-gray-700">오늘의 기분</p>
+          <p className="mb-3 text-sm font-medium text-stone-700">오늘의 기분</p>
           <MoodSelector value={mood} onChange={setMood} />
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3 border-t border-stone-200/80 pt-6">
           <button
             type="submit"
             disabled={loading}
-            className="rounded-lg bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="rounded-xl bg-teal-700 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal-900/10 transition hover:bg-teal-600 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? "저장 중…" : "저장"}
           </button>
           <Link
             href="/diary"
-            className="rounded-lg border border-gray-300 px-5 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors"
+            className="rounded-xl border border-stone-200 bg-white px-6 py-2.5 text-sm font-medium text-stone-700 shadow-sm transition hover:border-stone-300 hover:bg-stone-50"
           >
             취소
           </Link>

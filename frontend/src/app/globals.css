@@ -3,3 +3,13 @@
 @theme inline {
   --font-sans: var(--font-noto-sans-kr);
 }
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  ::selection {
+    @apply bg-teal-200/60 text-stone-900;
+  }
+}

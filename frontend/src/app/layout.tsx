@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${notoSansKr.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-[family-name:var(--font-noto-sans-kr)]">
+      <body className="min-h-full flex flex-col bg-stone-50 text-stone-900 font-[family-name:var(--font-noto-sans-kr)]">
         {children}
       </body>
     </html>

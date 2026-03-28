@@ -15,7 +15,7 @@ export default function DeleteButton({ id }: { id: string }) {
     <button
       type="button"
       onClick={handleDelete}
-      className="rounded-lg border border-red-300 px-5 py-2 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors"
+      className="rounded-xl border border-rose-200 bg-white px-6 py-2.5 text-sm font-semibold text-rose-700 shadow-sm transition hover:border-rose-300 hover:bg-rose-50"
     >
       삭제
     </button>
