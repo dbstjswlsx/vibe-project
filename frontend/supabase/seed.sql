@@ -1,0 +1,2 @@
+-- Optional seed data for local `supabase db reset`.
+-- Example: insert into public.entries (...) values (...);
